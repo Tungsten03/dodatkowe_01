@@ -20,7 +20,7 @@ prosta1 = wyznaczanie_prostej(user1)
 user2 = input('podaj wspolzedne punktu drugiego (format: A,B): ')
 prosta2 = wyznaczanie_prostej(user2)
 
-if prosta1 == False or prosta2 == False:
+if not prosta1 or not prosta2:
     print('Nie mozna wykonac dzialania. Nalezy podac 2 prawidlowe proste.')    
     
 else:
