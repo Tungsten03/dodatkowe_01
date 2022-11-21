@@ -6,9 +6,11 @@ def predykat_miasta(stacja):
 def predykat_wojewodztwa(stacja):
     return stacja['city']['commune']['provinceName'] == 'WIELKOPOLSKIE'
 
+def nazwy_stacji(stacja):
+    return stacja['stationName']
+
 def predykat_id(stacja):
     return stacja['id'] > 15000
-
 
 print('Wszystkie stacje w Warszawie')
 warszawskie = filter(predykat_miasta, wszystkie_stacje_pomiarowe)
@@ -17,6 +19,10 @@ print(*warszawskie, sep='\n')
 print('Wszystkie stacje w woj. wielkopolskim')
 wielkopolskie = filter(predykat_wojewodztwa, wszystkie_stacje_pomiarowe)
 print(*wielkopolskie, sep='\n')
+
+print('Wszystkie nazwy stacji')
+nazwy = map(nazwy_stacji, wszystkie_stacje_pomiarowe)
+print(*nazwy, sep='\n')
 
 print('stacje o id > 15000')
 id15000 = filter(predykat_id, wszystkie_stacje_pomiarowe)
