@@ -11,9 +11,11 @@ c = poczatek(prosta1, prosta2)
 d = koniec(prosta1, prosta2)
 
 #porównaj poczatkowe i koncowe punkty podanych prostych i wyznacz czesc wspolna
-
-if c > d:
-    print('podane odcinki nie maja czesci wspolnej.')
+if not prosta1 or not prosta2:
+    print('Nie mozna wykonac dzialania. Nalezy podac 2 prawidlowe proste.')    
 else:
-    wspolna = [c, d]
-    print(f'czesc wspolna podanych odcinkow to: {wspolna}')
+    if c > d:
+        print('podane odcinki nie maja czesci wspolnej.')
+    else:
+        wspolna = [c, d]
+        print(f'czesc wspolna podanych odcinkow to: {wspolna}')
